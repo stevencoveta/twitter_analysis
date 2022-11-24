@@ -1,10 +1,14 @@
 import tweepy
 import pandas as pd 
+from dotenv.main import load_dotenv
+import os
 
-api_key = "GosyQglUdrbp2zIuTXYEuYLkU"
-api_secrets = "SEwKdTCQ6S81TbIhTtWZuhOmHen58nLZJshj8dSOrTWrulKbbr"
-access_token = "1589592172277506048-riv1iWYnHrnSWXeA5Xk5gfplmabyKS"
-access_secret = "b5rB61Eifd7oexWMXkXcEOhG47jqXCp14OcF59kviCrA0"
+load_dotenv()
+
+api_key = os.environ['api_key']
+api_secrets = os.environ['api_secrets']
+access_token = os.environ['access_token']
+access_secret = os.environ['access_secret']
  
 auth = tweepy.OAuthHandler(api_key,api_secrets)
 auth.set_access_token(access_token,access_secret)
