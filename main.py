@@ -22,7 +22,7 @@ btc_prices.open = btc_prices.open.astype(float)
 
 st.title('Tweets keywords analysis')
 
-input = st.text_input('Write username')
+input = st.sidebar.text_input('Write username')
 df = get_tweets(input)
 
 #st.dataframe(df.head())
@@ -129,10 +129,10 @@ def returns_time(dts,dts20,btc_prices,filter_key):
 def convert_df(df):
     return df.to_csv().encode('utf-8')
 
-val1 = st.text_input('keyword 1').lower()
-val2 = st.text_input('keyword 2').lower()
+val1 = st.sidebar.text_input('keyword 1').lower()
+val2 = st.sidebar.text_input('keyword 2').lower()
 
-if val1 and val2:
+if val1 or val2:
     st.write(f'Got all inputs: {[val1, val2]}')
     filter_key = filter_keywords(val1,val2)
     filter_key.date = pd.to_datetime(filter_key.date)
