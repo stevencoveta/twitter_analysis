@@ -166,7 +166,7 @@ if val1 or val2:
     mime='text/csv',
 )
 
-    st.write(f"Total profits {round(df.returns.sum() * 100,4)} % if long on all tweets and selling after {number} minutes")
+    st.write(f"Total profits {round(df.returns.sum() * 100,2)} % if long on all tweets and selling after {number} minutes")
     st.line_chart(df.set_index("date")[["returns"]].cumsum())
 
     #st.title("Backtest")
