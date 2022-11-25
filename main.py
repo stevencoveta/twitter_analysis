@@ -19,9 +19,8 @@ btc_prices.high = btc_prices.high.astype(float)
 btc_prices.low = btc_prices.low.astype(float)
 btc_prices.open = btc_prices.open.astype(float)
 
-st.title('Tweets exploratory analysis')
+st.title('Tweets keywords analysis')
 
-st.line_chart(btc_prices.close)
 input = st.text_input('Write username')
 df = get_tweets(input)
 
@@ -144,6 +143,8 @@ if val1 and val2:
     filter = filter_key.copy()
     filter = filter.reset_index()
     filter = filter[::-1].reset_index(drop = True)
+    st.dataframe(filter)
+
     filter.date = filter.date.dt.ceil("min")
     st.dataframe(filter)
     filter_plus20 = filter.date + pd.Timedelta(f"{number}min")
