@@ -10,7 +10,7 @@ from fetch_tweets import *
 #from nltk.tokenize import word_tokenize
 import itertools
 import matplotlib.pyplot as plt
-#import seaborn as sns
+import seaborn as sns
 
 
 btc_prices = pd.read_csv("btc_prices.zip", index_col = [0])
