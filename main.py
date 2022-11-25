@@ -149,7 +149,7 @@ if val1 and val2:
     st.dataframe(filter)
     filter_plus20 = filter.date + pd.Timedelta(f"{number}min")
     st.dataframe(filter_plus20)
-    init = btc_prices.loc[str(filter.date[0]strftime("%Y-%m-%d, %H:%M:%S"))].close
+    init = btc_prices.loc[str(filter.date[0].strftime("%Y-%m-%d, %H:%M:%S"))].close
     st.write(f"init balance {init}")
     df = returns_time(filter.date,filter_plus20,btc_prices,filter)
     st.dataframe(df)
