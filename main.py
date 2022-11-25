@@ -113,7 +113,11 @@ def returns_time(dts,dts20,btc_prices,filter_key):
             sells.append(end)
         except: 
             pass
-        
+    print(len(returns))
+    print(len(dt))
+    print(len(tweets))
+    print(len(buys))
+    print(len(sells))
     returns_date = {"date":dt, 
                    "buy_price":buys,
                    "sell_price":sells,
