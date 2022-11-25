@@ -104,11 +104,11 @@ def returns_time(dts,dts20,btc_prices,filter_key):
     sells = []
     for i in range(len(dts)):
         try:
-            init = btc_prices.loc[str(dts[i])].close
-            end = btc_prices.loc[str(dts20[i])].close
+            init = btc_prices.loc[str(dts[i].strftime("%Y-%m-%d %H:%M:%S"))].close
+            end = btc_prices.loc[str(dts20[i].strftime("%Y-%m-%d %H:%M:%S"))].close
             returns.append((end - init)/init)
             dt.append(dts[i])
-            tweets.append(filter_key.tweet[i])
+            tweets.append(filter_key.tweet[i].strftime("%Y-%m-%d %H:%M:%S"))
             buys.append(init)
             sells.append(end)
         except: 
@@ -146,11 +146,11 @@ if val1 and val2:
     st.dataframe(filter)
 
     filter.date = filter.date.dt.ceil("min")
-    st.dataframe(filter)
+    #st.dataframe(filter)
     filter_plus20 = filter.date + pd.Timedelta(f"{number}min")
-    st.dataframe(filter_plus20)
+    #st.dataframe(filter_plus20)
     init = btc_prices.loc[str(filter.date[0].strftime("%Y-%m-%d %H:%M:%S"))].close
-    st.write(f"init balance {init}")
+    #st.write(f"init balance {init}")
     df = returns_time(filter.date,filter_plus20,btc_prices,filter)
     st.dataframe(df)
     csv = convert_df(df)
