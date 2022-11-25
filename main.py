@@ -21,6 +21,7 @@ btc_prices.open = btc_prices.open.astype(float)
 
 st.title('Tweets exploratory analysis')
 
+st.line_chart(btc_prices.close)
 input = st.text_input('Write username')
 df = get_tweets(input)
 
