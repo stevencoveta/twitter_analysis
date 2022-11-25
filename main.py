@@ -9,7 +9,7 @@ from fetch_tweets import *
 #nltk.download('stopwords')
 #from nltk.tokenize import word_tokenize
 import itertools
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 #import seaborn as sns
 
 
