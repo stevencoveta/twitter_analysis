@@ -2,16 +2,15 @@ import streamlit as st
 import pandas as pd 
 import tweepy
 import numpy as np
-import matplotlib.pyplot as plt
-from wordcloud import WordCloud, STOPWORDS
+#from wordcloud import WordCloud, STOPWORDS
 from fetch_tweets import *
-import nltk
-from nltk.corpus import stopwords
-nltk.download('stopwords')
-from nltk.tokenize import word_tokenize
+#import nltk
+#from nltk.corpus import stopwords
+#nltk.download('stopwords')
+#from nltk.tokenize import word_tokenize
 import itertools
-import matplotlib.pyplot as plt
-import seaborn as sns
+#import matplotlib.pyplot as plt
+#import seaborn as sns
 
 
 btc_prices = pd.read_csv("/Users/steven/Desktop/btc-usdt-02-2022-11-2022.csv", index_col = [0])
