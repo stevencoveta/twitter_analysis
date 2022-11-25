@@ -26,7 +26,7 @@ input = st.sidebar.text_input('Write username')
 df = get_tweets(input)
 
 #st.dataframe(df.head())
-st.write(f"We got {len(df)} tweets ranging from {df.date[0]}")
+st.write(f"We got {len(df)} tweets ranging from {df.date.iloc[-1]} to {df.date[0]}")
 def filter_keywords(a,b):
     text = []
     dt = []
