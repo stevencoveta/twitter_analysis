@@ -107,7 +107,7 @@ def returns_time(dts,dts20,btc_prices,filter_key):
             init = btc_prices.loc[str(dts[i].strftime("%Y-%m-%d %H:%M:%S"))].close
             end = btc_prices.loc[str(dts20[i].strftime("%Y-%m-%d %H:%M:%S"))].close
             returns.append((end - init)/init)
-            dt.append(dts[i])
+            dt.append(dts[i].strftime("%Y-%m-%d %H:%M:%S"))
             tweets.append(filter_key.tweet[i].strftime("%Y-%m-%d %H:%M:%S"))
             buys.append(init)
             sells.append(end)
