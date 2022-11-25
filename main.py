@@ -11,6 +11,7 @@ from fetch_tweets import *
 import itertools
 import matplotlib.pyplot as plt
 import seaborn as sns
+from datetime import datetime
 
 
 btc_prices = pd.read_csv("btc_prices.zip", index_col = [0])
@@ -122,7 +123,6 @@ def returns_time(dts,dts20,btc_prices,filter_key):
     return pd.DataFrame(returns_date)
     
 def convert_df(df):
-    # IMPORTANT: Cache the conversion to prevent computation on every rerun
     return df.to_csv().encode('utf-8')
 
 val1 = st.text_input('keyword 1').lower()
@@ -149,7 +149,7 @@ if val1 and val2:
     st.dataframe(filter)
     filter_plus20 = filter.date + pd.Timedelta(f"{number}min")
     st.dataframe(filter_plus20)
-    init = btc_prices.loc[str(filter.date[0][:-6])].close
+    init = btc_prices.loc[str(filter.date[0]strftime("%Y-%m-%d, %H:%M:%S"))].close
     st.write(f"init balance {init}")
     df = returns_time(filter.date,filter_plus20,btc_prices,filter)
     st.dataframe(df)
