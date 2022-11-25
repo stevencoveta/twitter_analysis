@@ -144,7 +144,7 @@ if val1 and val2:
     filter = filter.reset_index()
     filter = filter[::-1].reset_index(drop = True)
     filter.date = filter.date.dt.ceil("min")
-
+    st.dataframe(filter)
     filter_plus20 = filter.date + pd.Timedelta(f"{number}min")
     #st.dataframe(filter_plus20)
     df = returns_time(filter.date,filter_plus20,btc_prices,filter)
