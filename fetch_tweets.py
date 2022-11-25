@@ -52,7 +52,7 @@ def get_tweets(userID):
     max_tweet_id = get_last_tweet(userID)
     print(f"fetching tweets of {userID}")
     try:
-        for _ in range(15):
+        for _ in range(40):
             tweets = api.user_timeline(screen_name=userID, 
                            count=200,
                            include_rts = False,
