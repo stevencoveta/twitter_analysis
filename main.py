@@ -147,7 +147,7 @@ if val1 and val2:
     filter = filter_key.copy()
     filter = filter.reset_index()
     filter = filter[::-1].reset_index(drop = True)
-    st.dataframe(filter)
+    #st.dataframe(filter)
 
     filter.date = filter.date.dt.ceil("min")
     #st.dataframe(filter)
