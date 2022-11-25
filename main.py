@@ -14,7 +14,7 @@ import seaborn as sns
 from datetime import datetime
 
 
-btc_prices = pd.read_csv("btc_prices.zip", index_col = [0])
+btc_prices = pd.read_csv("btc_prices_1.zip", index_col = [0])
 btc_prices.close = btc_prices.close.astype(float)
 btc_prices.high = btc_prices.high.astype(float)
 btc_prices.low = btc_prices.low.astype(float)
