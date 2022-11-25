@@ -122,7 +122,6 @@ def returns_time(dts,dts20,btc_prices,filter_key):
     return pd.DataFrame(returns_date)
     
 def convert_df(df):
-    # IMPORTANT: Cache the conversion to prevent computation on every rerun
     return df.to_csv().encode('utf-8')
 
 val1 = st.text_input('keyword 1').lower()
@@ -137,8 +136,9 @@ if val1 and val2:
     st.write(f'{val1} and {val2} where {len(filter_key)} mentioned')
     
     #st.write("set after how long should sell in minutes")
-    #number = st.number_input('Insert time to sell after purchase in minutes')
-    number = int(float(st.text_input('minutes to sell after buy')))
+    number = st.number_input('Insert time to sell after purchase in minutes',value=20,step = 1)
+    print(number)
+    #number = int(float(st.text_input('minutes to sell after buy')))
 
     filter = filter_key.copy()
     filter = filter.reset_index()
