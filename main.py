@@ -138,7 +138,7 @@ if val1 and val2:
     
     #st.write("set after how long should sell in minutes")
     #number = st.number_input('Insert time to sell after purchase in minutes')
-    number = int(st.text_input('minutes to sell after buy'))
+    number = int(float(st.text_input('minutes to sell after buy')))
 
     filter = filter_key.copy()
     filter = filter.reset_index()
