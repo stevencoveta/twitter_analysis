@@ -138,7 +138,7 @@ if val1 or val2:
     filter_key.date = pd.to_datetime(filter_key.date)
     filter_key = filter_key.set_index("date")
     #st.dataframe(filter_key)
-    st.write(f'{val1} or {val2} where {len(filter_key)} mentioned')
+    st.write(f'{val1} or {val2} where {len(filter_key)} times mentioned')
     
     #st.sidebar.write("set after how long should sell in minutes")
     #number = st.number_input('Insert time to sell after purchase in minutes')
