@@ -13,7 +13,7 @@ import itertools
 #import seaborn as sns
 
 
-btc_prices = pd.read_csv("/Users/steven/Desktop/btc-usdt-02-2022-11-2022.csv", index_col = [0])
+btc_prices = pd.read_csv("btc_prices.zip", index_col = [0])
 btc_prices.close = btc_prices.close.astype(float)
 btc_prices.high = btc_prices.high.astype(float)
 btc_prices.low = btc_prices.low.astype(float)
