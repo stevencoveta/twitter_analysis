@@ -140,9 +140,9 @@ if val1 or val2:
     #st.dataframe(filter_key)
     st.write(f'{val1} or {val2} where {len(filter_key)} mentioned')
     
-    #st.write("set after how long should sell in minutes")
+    #st.sidebar.write("set after how long should sell in minutes")
     #number = st.number_input('Insert time to sell after purchase in minutes')
-    number = int(st.text_input('minutes to sell after buy'))
+    number = int(st.sidebar.text_input('minutes to sell after buy'))
 
     filter = filter_key.copy()
     filter = filter.reset_index()
